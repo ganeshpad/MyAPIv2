@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/getall")
-    public Map<String, Object> getAllEmployee()
+    public Map<String, EmployeeModel> getAllEmployee()
     {
         return employeeServiceImpl.getAllEmployee();
     }

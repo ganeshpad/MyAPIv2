@@ -9,7 +9,7 @@ import java.util.Map;
 @Component
 public class EmployeeServiceImpl implements EmployeeService {
 
-    Map<String, Object> employeeList = new HashMap<>();
+    Map<String, EmployeeModel> employeeList = new HashMap<>();
 
     public String addEmployee(String id, EmployeeModel employeeModel) {
         employeeList.put(id, employeeModel);
@@ -21,13 +21,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         return "Employee Added Successfully";
     }
 
-    public Map<String, Object> getAllEmployee() {
+    public Map<String, EmployeeModel> getAllEmployee() {
         return employeeList;
     }
 
     public EmployeeModel getEmployee(String id)
     {
-        return (EmployeeModel) employeeList.get(id);
+        return employeeList.get(id);
     }
 
 }
